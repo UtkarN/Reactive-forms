@@ -1,18 +1,42 @@
-<div class="container form">
-  <h2>registration form</h2>
-   <form >
+<div class="container-fluid">
+  <h2>Registration Form</h2>
+  <form [formGroup]="registrationForm" (ngSubmit)="getValues()">
     <div class="form-group">
-      <label for="">Username</label>
-      <input type="text" class="form-control">
+      <label>UserName</label>
+      <input formControlName="UserName" type="text" class="form-control">
     </div>
+    <br>
     <div class="form-group">
-      <label for="">Password</label>
-      <input type="password" class="form-control">
+      <label>Password</label>
+      <input formControlName="Password" type="password" class="form-control">
     </div>
+    <br>
     <div class="form-group">
-      <label for="">Confirm Password</label>
-      <input type="password" class="form-control">
+      <label>Confirm Password</label>
+      <input formControlName="ConfirmPassword" type="password" class="form-control">
     </div>
+    <br>
+    <div formGroupName="address">
+      
+      <div class="form-group">
+        <label>City</label>
+        <input formControlName="city" type="password" class="form-control">
+      </div>
+      <br>
+      <div class="form-group">
+        <label>State</label>
+        <input formControlName="state" type="text" class="form-control">
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Pin Code</label>
+        <input formControlName="PinCode" type="text" class="form-control">
+      </div>
+  
+    </div>
+    <br>
     <button class="btn btn-primary" type="submit">Register</button>
-   </form>
+  
+  </form>
+ 
 </div>
